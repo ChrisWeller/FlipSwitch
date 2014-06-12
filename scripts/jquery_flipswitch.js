@@ -6,14 +6,14 @@
 		this.html_text = '<div class="flipswitch_holder">\
 							<div class="flipswitch_container">\
 								<div class="flipswitch_option flipswitch_option1">\
-									<p>ON</p>\
+									<p>YES</p>\
 								</div>\
 								<div class="flipswitch_option center">\
 									<div class="flipswitch_center_left"></div>\
 									<div class="flipswitch_center_right"></div>\
 								</div>\
 								<div class="flipswitch_option flipswitch_option2">\
-									<p>OFF</p>\
+									<p>NO</p>\
 								</div>\
 							</div>\
 						</div>';
@@ -42,7 +42,7 @@
 			_this.$control.data( 'control', this.$el );
 			$( '.flipswitch_option1 p', _this.$control ).html( _this.$el.data( 'on_text' ) );
 			$( '.flipswitch_option2 p', _this.$control ).html( _this.$el.data( 'off_text' ) );
-			if ( !_this.$el.attr( 'checked' ) ) {
+			if ( !_this.$el.prop( 'checked' ) ) {
 				$( '.flipswitch_option1', _this.$control ).hide();
 			}
 			_this.$control.insertAfter( _this.$el );
@@ -50,7 +50,8 @@
 
 			_this.$control.click( function() {
 				$( '.flipswitch_option1', _this.$control ).animate({ width:'toggle'} );
-				_this.$el.attr( 'checked', !_this.$el.attr( 'checked' ) );
+				_this.$el.prop( 'checked', !_this.$el.prop( 'checked' ) );
+				_this.$el.trigger( 'change' );
 			});
 		}
 	};
