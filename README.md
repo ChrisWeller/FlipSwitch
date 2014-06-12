@@ -1,0 +1,4 @@
+FlipSwitch
+==========
+
+jQuery FlipSwitch control
