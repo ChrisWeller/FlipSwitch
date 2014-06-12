@@ -17,21 +17,31 @@
 				line-height: 22px;
 				overflow: hidden;
 				position: relative;
-				text-align: center;
 				vertical-align: middle;
 				width: 100px;
 				font-family: Trebuchet, Arial, sans-serif;
 
 			}
-			.flipswitch_option1 {
-				background-color: #2fccff;
-			}
-			.flipswitch_option2 {
-				background-color: #eeeeee;
-			}
+				.flipswitch_option p {
+					margin: 0px;
+				}
+				.flipswitch_option.flipswitch_option1 {
+					background-color: #2fccff;
+				}
+					.flipswitch_option.flipswitch_option1 p {
+						padding-left: 10px;
+					}
+				.flipswitch_option.flipswitch_option2 {
+					background-color: #eeeeee;
+					text-align: right;
+				}
+					.flipswitch_option.flipswitch_option2 p {
+						padding-right: 10px;
+					}
 
 			.flipswitch_option.center {
 				position: relative;
+				height: 22px;
 				width: 18px;
 				background: -webkit-linear-gradient(left, #2fccff, #eeeeee);
 				background: linear-gradient(left, #2fccff, #eeeeee);

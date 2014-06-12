@@ -6,14 +6,14 @@
 		this.html_text = '<div class="flipswitch_holder">\
 							<div class="flipswitch_container">\
 								<div class="flipswitch_option flipswitch_option1">\
-									ON\
+									<p>ON</p>\
 								</div>\
 								<div class="flipswitch_option center">\
 									<div class="flipswitch_center_left"></div>\
 									<div class="flipswitch_center_right"></div>\
 								</div>\
 								<div class="flipswitch_option flipswitch_option2">\
-									OFF\
+									<p>OFF</p>\
 								</div>\
 							</div>\
 						</div>';
@@ -40,8 +40,8 @@
 
 			_this.$control = $( _this.html_text );
 			_this.$control.data( 'control', this.$el );
-			$( '.flipswitch_option1', _this.$control ).html( _this.$el.data( 'on_text' ) );
-			$( '.flipswitch_option2', _this.$control ).html( _this.$el.data( 'off_text' ) );
+			$( '.flipswitch_option1 p', _this.$control ).html( _this.$el.data( 'on_text' ) );
+			$( '.flipswitch_option2 p', _this.$control ).html( _this.$el.data( 'off_text' ) );
 			if ( !_this.$el.attr( 'checked' ) ) {
 				$( '.flipswitch_option1', _this.$control ).hide();
 			}
