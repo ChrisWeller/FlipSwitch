@@ -1,0 +1,57 @@
+			.flipswitch_holder {
+				border-radius: 11px;
+				border: 2px solid #999999;
+				height: 22px;
+				overflow: hidden;
+				width: 118px;
+				display: inline-block;
+			}
+
+			.flipswitch_container {
+				width: 400px;
+			}
+
+			.flipswitch_option {
+				float: left;
+				height: 100%;
+				line-height: 22px;
+				overflow: hidden;
+				position: relative;
+				text-align: center;
+				vertical-align: middle;
+				width: 100px;
+				font-family: Trebuchet, Arial, sans-serif;
+
+			}
+			.flipswitch_option1 {
+				background-color: #2fccff;
+			}
+			.flipswitch_option2 {
+				background-color: #eeeeee;
+			}
+
+			.flipswitch_option.center {
+				position: relative;
+				width: 18px;
+				background: -webkit-linear-gradient(left, #2fccff, #eeeeee);
+				background: linear-gradient(left, #2fccff, #eeeeee);
+			}
+			.flipswitch_option.center div {
+				border: 2px solid #999999;
+				background-color: white;
+				height: 16px;
+				width: 9px;
+				top: 1px;
+			}
+			.flipswitch_option.center .flipswitch_center_left {
+				border-left: none;
+				border-radius: 0px 8px 8px 0px;
+				position: absolute;
+				right: 0px;
+			}
+			.flipswitch_option.center .flipswitch_center_right {
+				border-right: none;
+				border-radius: 8px 0px 0px 8px;
+				position: absolute;
+				left: 0px;
+			}
