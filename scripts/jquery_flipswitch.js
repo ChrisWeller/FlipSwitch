@@ -29,7 +29,11 @@
 		//Privates:
 		this.$el = $(el);
 
+		// The control displayed on screen (the actual switch)
 		this.$control = null;
+
+		// The type of element the result should be stored in (textbox / checkbox)
+		this.element_type = null;
 	}
 
 	// Separate functionality from object creation
@@ -38,11 +42,19 @@
 		init: function() {
 			var _this = this;
 
+			// Find if we are working on a textbox or checkbox
+			_this.element_type = _this.$el.attr( 'type' );
+
+			// Create the actual flipswitch
 			_this.$control = $( _this.html_text );
+			// Note on the new control the original element
 			_this.$control.data( 'control', this.$el );
+
+			// Set the text to be displayed
 			$( '.flipswitch_option1 p', _this.$control ).html( _this.$el.data( 'on_text' ) );
 			$( '.flipswitch_option2 p', _this.$control ).html( _this.$el.data( 'off_text' ) );
-			if ( !_this.$el.prop( 'checked' ) ) {
+
+			if ( !_this._get_value() ) {
 				$( '.flipswitch_option1', _this.$control ).hide();
 			}
 			_this.$control.insertAfter( _this.$el );
@@ -50,9 +62,39 @@
 
 			_this.$control.click( function() {
 				$( '.flipswitch_option1', _this.$control ).animate({ width:'toggle'} );
-				_this.$el.prop( 'checked', !_this.$el.prop( 'checked' ) );
+				_this._set_value( !_this._get_value() );
 				_this.$el.trigger( 'change' );
 			});
+		},
+
+		/**
+		 * Returns true / false over the value in the original element
+		 * @returns {Boolean}
+		 */
+		_get_value: function() {
+
+			_this = this;
+
+			if ( _this.element_type == 'checkbox' ) {
+				return _this.$el.prop( 'checked' );
+			}
+			else {
+				return _this.$el.val() == 1;
+			}
+
+		},
+
+		_set_value: function( value ) {
+
+			_this = this;
+
+			if ( _this.element_type == 'checkbox' ) {
+				return _this.$el.prop( 'checked', value );
+			}
+			else {
+				return _this.$el.val( value ? 1 : 0 );
+			}
+
 		}
 	};
 
