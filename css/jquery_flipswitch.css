@@ -44,6 +44,8 @@
 				height: 22px;
 				width: 18px;
 				background: -webkit-linear-gradient(left, #2fccff, #eeeeee);
+				background: -o-linear-gradient(right, #2fccff, #eeeeee);
+				background: -moz-linear-gradient(right, #2fccff, #eeeeee);
 				background: linear-gradient(left, #2fccff, #eeeeee);
 			}
 			.flipswitch_option.center div {
