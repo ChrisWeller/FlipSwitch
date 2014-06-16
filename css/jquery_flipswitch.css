@@ -41,7 +41,7 @@
 	.flipswitch_holder .flipswitch_container .flipswitch_option.center {
 		position: relative;
 		height: 22px;
-		width: 18px;
+		width: 18px !important;
 		background: -webkit-linear-gradient(left, #2fccff, #eeeeee);
 		background: -o-linear-gradient(right, #2fccff, #eeeeee);
 		background: -moz-linear-gradient(right, #2fccff, #eeeeee);
@@ -100,6 +100,6 @@
 	margin-left: 7px;
 	width: 64px;
 }
-	.flipswitch_holder .flipswitch_container .flipswitch_option {
+	.flipswitch_holder.narrow .flipswitch_container .flipswitch_option {
 		width: 46px;
 	}
