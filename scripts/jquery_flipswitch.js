@@ -3,7 +3,7 @@
 	//Validate Forms
 	function FlipSwitchManager(el, options) {
 
-		this.html_text = '<div class="flipswitch_holder">\
+		this.html_text = '<div class="flipswitch_holder ui-widget-content ui-corner-all ui-state-default">\
 							<div class="flipswitch_container">\
 								<div class="flipswitch_option flipswitch_option1">\
 									<p>YES</p>\
@@ -50,6 +50,9 @@
 			_this.$control.addClass( 'h2' );
 			if ( _this.$el.data( 'switch_width' ) == 'narrow' ) {
 				_this.$control.addClass( 'narrow' );
+			}
+			if ( _this.$el.data( 'switch_width' ) == 'wide' ) {
+				_this.$control.addClass( 'wide' );
 			}
 			// Note on the new control the original element
 			_this.$control.data( 'control', this.$el );
