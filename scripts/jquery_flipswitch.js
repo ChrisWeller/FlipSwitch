@@ -101,7 +101,17 @@
 			else {
 				return _this.$el.val( value ? 1 : 0 );
 			}
+		},
 
+		// User accessible function to set value
+		set_value: function( value ) {
+			var _this = this;
+
+			// If the value currently held isn't what is to be set
+			if ( _this._get_value() != value ) {
+				// Trigger a change
+				_this.$control.trigger( 'click' );
+			}
 		}
 	};
 
