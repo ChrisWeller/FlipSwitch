@@ -68,6 +68,8 @@
 			this.$el.hide();
 
 			_this.$control.click( function() {
+				if( _this.$el.hasClass('DisableEvents') )
+					return;
 				$( '.flipswitch_option1', _this.$control ).animate({ width:'toggle'} );
 				_this._set_value( !_this._get_value() );
 				_this.$el.trigger( 'change' );
