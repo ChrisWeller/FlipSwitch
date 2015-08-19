@@ -47,7 +47,7 @@
 
 			// Create the actual flipswitch
 			_this.$control = $( _this.html_text );
-			_this.$control.addClass( 'h2' );
+			_this.$control.addClass( 'he2' );
 			if ( _this.$el.data( 'switch_width' ) == 'narrow' ) {
 				_this.$control.addClass( 'narrow' );
 			}
